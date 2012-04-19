@@ -1,4 +1,5 @@
 .htaccess
+gnmech-template/img/project-images/*
 wp-*.php
 xmlrpc.php
 wp-admin/
