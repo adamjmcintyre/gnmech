@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<title>Untitled Document</title>
+        <style type="text/css">
+            a img{ 
+                border:0;
+            }
+            
+            #flickr img{
+                float:left;
+                height:50px;
+                margin:5px;
+                width:50px;
+            }
+
+.jcarousel-container {
+    position: relative;
+}
+
+.jcarousel-clip {
+    z-index: 2;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+    div#product_container.ie6 .jcarousel-clip{ width:100%; }
+
+.jcarousel-list {
+    z-index: 1;
+    overflow: hidden;
+    position: relative;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.jcarousel-list li,
+.jcarousel-item {
+    list-style: none;
+    /* We set the width/height explicitly. No width/height causes infinite loops. */
+    width: 75px;
+    height: 75px;
+}
+
+/**
+ * The buttons are added dynamically by jCarousel before
+ * the <ul> list (inside the <div> described above) and
+ * have the classnames "jcarousel-next" and "jcarousel-prev".
+ */
+.jcarousel-next {
+    z-index: 3;
+    display: none;
+}
+
+.jcarousel-prev {
+    z-index: 3;
+    display: none;
+}            
+            .clear{ clear:both; }
+        </style>
+	</head>
+	<body>
+	    <div id="flickr"></div>
+        <br class="clear">
+        
+        <div id="vimeo"></div>
+        <br class="clear">
+        
+        <div id="twitter"></div>
+        <br class="clear">
+        
+        <div id="tweet-list"></div>
+        
+	    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+	    <script type="text/javascript" src="./js/jcarousel/lib/jquery.jcarousel.min.js"></script>
+        <script type="text/javascript" src="./js/socialmedia.js"></script>
+	</body>
+</html>

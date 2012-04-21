@@ -1,0 +1,13 @@
+.isobar-admin .row{
+    margin:15px 0;
+}
+
+.isobar-admin label{
+    display:block;
+    font-weight:bold;
+    margin-bottom:5px;
+}
+
+.isobar-admin input[type="text"]{
+    width:300px;
+}
