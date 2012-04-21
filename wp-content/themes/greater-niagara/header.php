@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html <?php language_attributes(); ?>>
+<!--[if lt IE 8]>      <html class="oldie" <?php language_attributes(); ?>> <![endif]-->
+<!--[if gte IE 8]><!--><html <?php language_attributes(); ?>><!--<![endif]-->
+
 <head profile="http://gmpg.org/xfn/11">
     <meta charset="<?php bloginfo('charset'); ?>">
     <!--[if IE]><![endif]-->
@@ -66,8 +68,7 @@
 <?php wp_head(); ?>
 </head>
 
-<!--[if lt IE 8]>      <html class="oldie" lang="en"> <![endif]-->
-<!--[if gte IE 8]><!--><html lang="en"><!--<![endif]-->
+<?php write_body_tag(); ?>
 
 <div id="container">
     <header class="clearfix">

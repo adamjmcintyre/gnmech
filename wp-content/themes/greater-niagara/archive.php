@@ -4,7 +4,7 @@
         <?php if (have_posts()) : ?>
         <?php $post = $posts[0]; // Hack. Set $post so that the_date() works. ?>
         <?php while (have_posts()) : the_post(); ?>
-            <article id="post-<?php the_ID(); ?>" class="single-post clearfix">
+            <article id="post-<?php the_ID(); ?>" class="single-post">
                 <section class="image">
                     <?php isoblog_the_post_thumbnail($post->ID, array( 150,150 )); ?>
                 </section>
@@ -30,26 +30,15 @@
                                     </p>
                                 </cite>
                             </div>  
-                            
                         </section>                       
-                        <details>
-                            <p>Posted in <?php the_category(', ') ?></p>
-                            <p><time datetime="<?php the_time('j F Y') ?>" pubdate="pubdate"><?php the_time('j F Y') ?></time></p>
-                        </details>
-                                        
-                        <?php the_excerpt(); ?>
-    
-                        <footer>
-                            <p><?php comments_popup_link('No Comments &#187;', '1 Comment &#187;', '% Comments &#187;'); ?></p>
-                        </footer>
-                        
+                        <?php the_excerpt(); ?>                        
                     </section>
-                             
                 </section>                               
             </article>   
                                    
         <?php endwhile; ?>
-        <nav class="post-links clearfix">
+
+        <nav class="post-links">
             <?php 
                 posts_nav_link('&nbsp;|&nbsp;','&lt; Previous','Next &gt;');                               
             ?> 
