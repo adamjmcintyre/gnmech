@@ -18,12 +18,6 @@
             <section class="body" role="main">
                 <?php the_content(); ?>
             </section>
-        
-            <?php if($user_ID): ?>
-            <section class="meta">     
-                <?php edit_post_link('Edit'); ?>                  
-            </section>
-            <? endif; ?>                                             
    
         </article>
 
