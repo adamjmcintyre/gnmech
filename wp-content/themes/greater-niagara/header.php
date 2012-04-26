@@ -12,7 +12,7 @@
     <link rel="shortcut icon" href="<?php bloginfo('template_directory'); ?>/favicon.ico" />
     <meta name="author" content="Greater Niagara Mechanical" >
 
-    <link rel="stylesheet" type="text/css" media="screen" href="<?php echo bloginfo('template_directory')?>/css/style.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="<?php echo get_bloginfo('template_directory') . '/style.css'; ?>">
  
     <!--[if lt IE 9]>
     <script type="text/javascript">
@@ -73,7 +73,7 @@
 <div id="container">
     <header class="clearfix">
         <a href="/" class="logo">
-            <img src="img/logo.png" alt="Greater Niagara Mechanical: Western New York HVAC design and installation">
+            <img src="<?php echo get_bloginfo('stylesheet_directory') . '/img/logo.png'; ?>" alt="Greater Niagara Mechanical: Western New York HVAC design and installation">
         </a>
         <section class="contact-information logo vcard">
             <h1 class="fn">Greater Niagara Mechanical, Inc.</h1>
