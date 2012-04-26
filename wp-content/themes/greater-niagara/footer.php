@@ -6,6 +6,7 @@
     <footer id="site-footer">
         <div class="vcard">
             <p class="adr">
+                &copy; <?php echo date('Y'); ?>
                 <span class="fn">Greater Niagara Mechanical, Inc.</span>
                 <span class="street-address">7311 Ward Rd # A</span>
                 <span class="locality">North Tonawanda</span>
@@ -14,8 +15,6 @@
                 <span class="tel">(716) 695-3600</span>
             </p>
         </div>   
-
-        <span class="copyright">&copy; <?php echo date('Y'); ?></span>                 
     </footer>
 
 </div><!-- END div#container -->
