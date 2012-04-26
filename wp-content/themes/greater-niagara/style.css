@@ -401,6 +401,7 @@ body{
 section#content{
     border:1px solid #E3E3E3;
     padding:16px;
+    overflow:hidden;
     
     -webkit-border-radius: 4px; 
     -moz-border-radius: 4px; 

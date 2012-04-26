@@ -89,11 +89,11 @@
         </section>
         <nav id="main-navigation">
             <ul>
-                <li><a href="/1">Services</a></li>
+                <li><a href="/services">Services</a></li>
                 <li><a href="/2">Project Studies</a></li>
                 <li><a href="/3">Specialties</a></li>
                 <li><a href="/4">About Us</a></li>
-                <li><a href="/5">Contact</a></li>
+                <li><a href="/contact-us">Contact</a></li>
             </ul>
         </nav>
     </header>  
