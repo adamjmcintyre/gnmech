@@ -90,9 +90,9 @@
         <nav id="main-navigation">
             <ul>
                 <li><a href="/services">Services</a></li>
-                <li><a href="/2">Project Studies</a></li>
-                <li><a href="/3">Specialties</a></li>
-                <li><a href="/4">About Us</a></li>
+                <li><a href="/project-studies">Project Studies</a></li>
+                <li><a href="/specialties">Specialties</a></li>
+                <li><a href="/about-us">About Us</a></li>
                 <li><a href="/contact-us">Contact</a></li>
             </ul>
         </nav>
