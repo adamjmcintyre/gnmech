@@ -161,10 +161,86 @@ while ( $loop->have_posts() ) : $loop->the_post();
 <?php endwhile;
 }
 
+function write_hp_news() {
+
+$loop = new WP_Query( array( 'post_type' => 'news', 'posts_per_page' => 30, 'orderby' => 'title', 'order' => 'asc', 'post__not_in' => array($excludeID) ) ); 
+if( $loop->have_posts() ):
+    echo '<ul class="news-items homepage">';
+while ( $loop->have_posts() ) : $loop->the_post(); 
+?>
+        <li>
+            <article>
+                <p><?php the_excerpt_max_charlength(125); ?></p>
+                <footer>
+                    <time><?php the_time(get_option('date_format')); ?></time>
+                </footer>
+            </article>
+        </li>
+<?php endwhile;
+    echo '</ul>';
+endif;
+}
+
+function write_news() {
+
+$loop = new WP_Query( array( 'post_type' => 'news', 'posts_per_page' => 30, 'orderby' => 'title', 'order' => 'asc', 'post__not_in' => array($excludeID) ) ); 
+if( $loop->have_posts() ):
+    echo '<ul class="news-items">';
+while ( $loop->have_posts() ) : $loop->the_post(); 
+?>
+        <li>
+            <article>
+                <header>
+                    <time><?php the_time(get_option('date_format')); ?></time>
+                </header>                
+                <p><?php the_content(); ?></p>
+            </article>
+        </li>
+<?php endwhile;
+    echo '</ul>';
+endif;
+}
+
+function write_about_us() {
+
+$loop = new WP_Query( array( 'post_type' => 'principal', 'posts_per_page' => 30, 'orderby' => 'title', 'order' => 'asc', 'post__not_in' => array($excludeID) ) ); 
+while ( $loop->have_posts() ) : $loop->the_post(); 
+?>  
+    <article class="vcard">
+        <h1 class="fn"><?php the_title(); ?></h1>
+        
+
+        <?php the_post_thumbnail(); ?>
+
+        <section class="bio note">
+            <?php the_content(); ?>
+        </section>
+    </article>
+<?php endwhile;
+}
+
 function new_excerpt_more($more) {
        global $post;
     return '&nbsp;&nbsp;<a href="'. get_permalink($post->ID) . '">&raquo; Read more</a>';
 }
 add_filter('excerpt_more', 'new_excerpt_more');
 
+function the_excerpt_max_charlength($charlength) {
+    $excerpt = get_the_excerpt();
+    $charlength++;
+
+    if ( mb_strlen( $excerpt ) > $charlength ) {
+        $subex = mb_substr( $excerpt, 0, $charlength - 5 );
+        $exwords = explode( ' ', $subex );
+        $excut = - ( mb_strlen( $exwords[ count( $exwords ) - 1 ] ) );
+        if ( $excut < 0 ) {
+            echo mb_substr( $subex, 0, $excut );
+        } else {
+            echo $subex;
+        }
+        echo '[...]';
+    } else {
+        echo $excerpt;
+    }
+}
 ?>

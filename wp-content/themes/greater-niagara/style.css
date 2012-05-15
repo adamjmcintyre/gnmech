@@ -311,7 +311,7 @@ td { vertical-align: top; }
 
 body{
     color:#666666;
-    font:12px Georgia, serif;
+    font:13px Georgia, serif;
     line-height: 1.25;       
 }
 
@@ -339,15 +339,21 @@ body{
     position: relative;
 }
 
-    #container > header a.logo > img{
+    #container > header a.logo{
+        display:block;
         height:150px;
         width:287px;
     }
 
+        a.logo img{
+            height:100%;
+            width:100%;
+        }
+
     #container > header > .contact-information{
-        float:right;
-        padding:16px;
-        margin-top:72px;
+        position:absolute;
+        right:16px;
+        top:88px;
     }
     
         #container > header > .contact-information{
@@ -428,6 +434,14 @@ section#content{
         #container > footer .adr > span:last-child:after{
             content:'';
         }
+
+#content > .case-study{
+    margin-bottom:40px;
+}
+
+    #content > .case-study .info{
+        margin-top:16px;
+    }
         
 /***
  * Homepage-specific styles
@@ -493,13 +507,22 @@ section#content{
     border-top:1px solid #E3E3E3;
     margin-top:16px;
     padding-top:16px;
+}
+
+#content .news-items > li{
+    border-bottom:1px dashed #CCC;
+    margin-bottom:8px;
+    padding-bottom:8px;
 }    
         
-#content .news-items > li{
-    float:left;
-    margin-left:24px;
-    width:208px;
-}
+    #content .news-items.homepage > li{
+        border:none;
+        display:inline-block;
+        margin:0 0 0 24px;
+        padding:0;
+        vertical-align:top;
+        width:208px;
+    }
 
     #content .news-items > li:first-child{
         margin-left:0;
@@ -546,63 +569,82 @@ section#content{
             -moz-border-radius: 4px; 
             border-radius: 4px;             
         }   
-    
-#content > article.content{
-    width:710px;
-}   
 
-    h1{
-        font-size:1.5em;
-        margin-bottom: 8px;
-    }          
-        
-    h2{
-        font-size:1.35em;
-        margin-bottom: 8px;
-    }          
-        
-    h3{
-        font-size:1.25em;
-        margin-bottom: 8px;
-    }          
-        
-    h4{
-        font-size:1.15em;
-        margin-bottom: 8px;
-    }          
-        
-    h5{
-        font-size:1.05em;
-        margin-bottom: 8px;
-    }          
-        
-    h6{
-        margin-bottom: 8px;
-    } 
-        
-    p{
-        margin:8px 0;
-    }      
-        
-    article.content img{
-        display:inline-block;
-        margin:8px 0;
-        max-width: 710px;
-    }
-        
-        article.content img.right{
-            margin-left:8px;
-        }                   
-        
-        article.content img.left{
-            margin-right:8px;
-        }  
+h1{
+    font-size:1.5em;
+    margin-bottom: 8px;
+}          
+    
+h2{
+    font-size:1.35em;
+    margin-bottom: 8px;
+}          
+    
+h3{
+    font-size:1.25em;
+    margin-bottom: 8px;
+}          
+    
+h4{
+    font-size:1.15em;
+    margin-bottom: 8px;
+}          
+    
+h5{
+    font-size:1.05em;
+    margin-bottom: 8px;
+}          
+    
+h6{
+    margin-bottom: 8px;
+} 
+    
+p{
+    margin:8px 0;
+}      
+    
+article.content img{
+    display:inline-block;
+    margin:8px 0;
+    max-width: 710px;
+}
+    
+    article.content img.right{
+        margin-left:8px;
+    }                   
+    
+    article.content img.left{
+        margin-right:8px;
+    }  
 
 article.case-study img{
     margin:0 auto;
     max-height:250px;
     max-width:100%;
-}                                              
+}  
+
+#principals > article{
+    border-bottom:1px dotted #CCC;
+    margin-bottom:16px;
+    overflow:hidden;
+    padding-bottom:16px;
+}                       
+
+    #principals > article:last{
+        border:none;
+    }               
+
+#principals > article img{
+    float:left;
+    height:auto;
+    margin:0 16px 16px 0;
+    width:225px;
+}      
+
+    #principals > article:nth-child(even) img{
+        float:right;
+        margin:0 0 16px 16px;
+    }
         
 /* ==|== non-semantic helper classes ========================================
    Please define your styles before this section.

@@ -8,27 +8,10 @@
 ?>
 <?php get_header(); ?>
         <div id="about-us"> 
-            
             <section id="principals">
-                <article class="vcard">
-                    <h1 class="fn">Sam Prezioso</h1>
-                    <h2>Title</h2>
-
-                    <img class="photo" src="" alt="Sam Prezioso">
-
-                    <section class="bio note">
-                        Lorem ipsum amit sit dolor. Varis et vectum. Blah blah blah.
-                    </section>
-
-                    <footer>
-                        <address>
-                            <span class="tel">716.555.5555</span>
-                            <a href="mailto:sam@gnm.com" class="email">email</a>
-                        </address>
-                    </footer>
-                </article>
+                <?php write_about_us(); ?>
             </section>
-
+            
             <section id="address">
                 <header>
                     <h1>Where to find us</h1>    

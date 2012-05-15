@@ -88,45 +88,12 @@
 </section>
 
 <section class="news clearfix">
-    <ul class="news-items">
-    	<li>
-    		<article>
-    			<p>LLorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus enim nulla, tempor sed fermentum id, venenatis ac metus.</p>
-    			<footer>
-    			    <time>10/05/2011</time>
-    			</footer>
-    		</article>
-    	</li>
-    	<li>
-    		<article>
-    			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus enim nulla, tempor sed fermentum id, venenatis ac metus.</p>
-                <footer>
-                    <time>10/05/2011</time>
-                </footer>
-    		</article>
-    	</li>
-    	<li>
-    		<article>
-    			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus enim nulla, tempor sed fermentum id, venenatis ac metus.</p>
-                <footer>
-                    <time>10/05/2011</time>
-                </footer>
-    		</article>
-    	</li>
-    	<li>
-    		<article>
-    			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus enim nulla, tempor sed fermentum id, venenatis ac metus.</p>
-                <footer>
-                    <time>10/05/2011</time>
-                </footer>
-    		</article>
-    	</li>
-    </ul>
-                        
-</section>
+    <?php write_hp_news(); ?>                        
         
-<nav class="post-links clearfix">
-    <a href="<?php echo get_bloginfo('url') . '/archives/'; ?>" >View all posts</a>
-</nav>
+    <nav class="post-links clearfix">
+        <a href="<?php echo get_bloginfo('url') . '/news/'; ?>" >View all news</a>
+    </nav>    
+</section>
+
 
 <?php get_footer(); ?>
