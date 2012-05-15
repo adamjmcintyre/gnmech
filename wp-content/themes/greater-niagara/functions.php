@@ -23,7 +23,7 @@ register_sidebar(array(
     'after_widget' => ''    
 ));*/
 
-add_action('init', 'add_project_studies');
+/*add_action('init', 'add_project_studies');
 function add_project_studies(){
     $args = array(
         'label' => __('Project Studies'),
@@ -32,16 +32,16 @@ function add_project_studies(){
         'show_ui' => true,
         'capability_type' => 'post',
         'hierarchical' => false,
-        'supports' => array( 'title', 'thumbnail', 'tags', 'editor' ),
+        'supports' => array( 'title', 'thumbnail', 'tags', 'editor'),
         'exclude_from_search' => true,
         '_builtin' => false,
         'rewrite' => array("slug" => "project-studies"),
-		    'taxonomies' => array('post_tag'),
+		    'taxonomies' => array('category'),
         'has_archive' => true
         );
 
     register_post_type( 'project_study' , $args );       
-}
+}*/
 
 add_action('init', 'add_principals');
 function add_principals(){
@@ -55,11 +55,28 @@ function add_principals(){
         'supports' => array( 'title', 'thumbnail', 'editor' ),
         'exclude_from_search' => true,
         '_builtin' => false,
-        'rewrite' => array("slug" => "principals"),
-        'taxonomies' => array('post_tag')
+        'rewrite' => array("slug" => "principals")
         );
 
     register_post_type( 'principal' , $args );   
+}
+
+add_action('init', 'add_news');
+function add_news(){
+    $args = array(
+        'label' => __('News'),
+        'singular_label' => __('News'),
+        'public' => true,
+        'show_ui' => true,
+        'capability_type' => 'post',
+        'hierarchical' => false,
+        'supports' => array( 'title', 'thumbnail', 'editor' ),
+        'exclude_from_search' => true,
+        '_builtin' => false,
+        'rewrite' => array("slug" => "news")
+        );
+
+    register_post_type( 'news' , $args );   
 }
 
 /*add_action("manage_posts_custom_column","custom_case_study_data_columns");
@@ -106,22 +123,48 @@ function write_body_tag(){
 
 }
 
-function write_case_studies() {
+function write_project_category($catId) {
 
-$loop = new WP_Query( array( 'post_type' => 'project_study', 'posts_per_page' => 30, 'orderby' => 'title', 'order' => 'asc', 'post__not_in' => array($excludeID) ) ); 
+$loop = new WP_Query( array( 'post_type' => 'post', 'category_name' => mysql_real_escape_string($catId), 'posts_per_page' => 30, 'orderby' => 'title', 'order' => 'asc', 'post__not_in' => array($excludeID) ) ); 
 while ( $loop->have_posts() ) : $loop->the_post(); 
 ?>
-    <article class="case-study"> 
+    <article class="case-study archive"> 
         <section class="image">
-			<?php the_post_thumbnail(); ?>
+            <a href="<?php the_permalink() ?>">
+                <?php the_post_thumbnail(); ?>
+            </a>
+        </section>
+        <section class="info">
+            <h1><a href="<?php the_permalink() ?>" rel="permalink" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a></h1>
+            <?php the_excerpt(); ?> 
+        </section>
+    </article>
+<?php endwhile;
+}
+
+function write_case_studies() {
+
+$loop = new WP_Query( array( 'post_type' => 'post', 'posts_per_page' => 30, 'orderby' => 'title', 'order' => 'asc', 'post__not_in' => array($excludeID) ) ); 
+while ( $loop->have_posts() ) : $loop->the_post(); 
+?>
+    <article class="case-study archive"> 
+        <section class="image">
+            <a href="<?php the_permalink() ?>">
+			    <?php the_post_thumbnail(); ?>
+            </a>
 		</section>
 		<section class="info">
 			<h1><a href="<?php the_permalink() ?>" rel="permalink" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a></h1>
 			<?php the_excerpt(); ?> 
-			
 		</section>
     </article>
 <?php endwhile;
 }
+
+function new_excerpt_more($more) {
+       global $post;
+    return '&nbsp;&nbsp;<a href="'. get_permalink($post->ID) . '">&raquo; Read more</a>';
+}
+add_filter('excerpt_more', 'new_excerpt_more');
 
 ?>

@@ -551,36 +551,36 @@ section#content{
     width:710px;
 }   
 
-    article.content h1{
+    h1{
         font-size:1.5em;
         margin-bottom: 8px;
     }          
         
-    article.content h2{
+    h2{
         font-size:1.35em;
         margin-bottom: 8px;
     }          
         
-    article.content h3{
+    h3{
         font-size:1.25em;
         margin-bottom: 8px;
     }          
         
-    article.content h4{
+    h4{
         font-size:1.15em;
         margin-bottom: 8px;
     }          
         
-    article.content h5{
+    h5{
         font-size:1.05em;
         margin-bottom: 8px;
     }          
         
-    article.content h6{
+    h6{
         margin-bottom: 8px;
     } 
         
-    article.content p{
+    p{
         margin:8px 0;
     }      
         
@@ -596,7 +596,13 @@ section#content{
         
         article.content img.left{
             margin-right:8px;
-        }                                                
+        }  
+
+article.case-study img{
+    margin:0 auto;
+    max-height:250px;
+    max-width:100%;
+}                                              
         
 /* ==|== non-semantic helper classes ========================================
    Please define your styles before this section.

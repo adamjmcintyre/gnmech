@@ -27,59 +27,59 @@
             air conditioning systems, HVAC control systems [anything else that you feel like belongs here; maybe a sentence or two more.]
         </h1>
         <ul class="callouts clearfix">
-        	<li>
+        	<li>                
                 <article>
                     <a href="/commercial">
-                        <img src="./img/project-images/large/114.JPG" alt="Project name + picture info">
+                        <img src="<?php bloginfo('template_directory'); ?>/img/commercial.jpg" alt="Commercial HVAC projects in Western New York">
                     </a>
                     <header>
                         <h1>                                        
-                           <a href="/commercial">
+                           <a href="/commercial-projects">
                                Commercial
                            </a>
                         </h1>
                     </header>
                     <summary>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus enim nulla, tempor sed fermentum id, venenatis ac metus. In eu tortor et ligula placerat semper ut sed orci. 
+                        Description of the types of commercial projects that you work on. Etc. etc.
                     </summary>
                     <footer>
-                        <a href="/commercial">Read more &gt;</a>
+                        <a href="/commercial-projects">Read more &gt;</a>
                     </footer>
                 </article>
         	</li>
         	<li>
                 <article>
                     <a href="/construction">
-                        <img src="./img/project-images/large/IMG00004-20101102-1352.jpg" alt="Project name + picture info">
+                        <img src="<?php bloginfo('template_directory'); ?>/img/construction.jpg" alt="Construction HVAC projects in Buffalo, NY">
                     </a>
                     <header>
                         <h1>                                        
-                           <a href="/construction">Construction</a>
+                           <a href="/construction-projects">Construction</a>
                         </h1>
                     </header>
                     <summary>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus enim nulla, tempor sed fermentum id, venenatis ac metus. In eu tortor et ligula placerat semper ut sed orci. 
+                        Description of the types of Construction projects that you work on.
                     </summary>
                     <footer>
-                        <a href="/construction">Read more &gt;</a>
+                        <a href="/construction-projects">Read more &gt;</a>
                     </footer>                                    
                 </article>
         	</li>
         	<li>
                 <article>
                     <a href="/past-projects">
-                        <img src="./img/project-images/large/026.JPG" alt="Project name + picture info">
+                        <img src="<?php bloginfo('template_directory'); ?>/img/past-projects.jpg" alt="Past Buffalo, NY HVAC projects completed by Greater Niagara Mechanical">
                     </a>
                     <header>
                         <h1>                                        
-                           <a href="/past-projects">Past Projects</a>
+                           <a href="/project-studies">Past Projects</a>
                         </h1>
                     </header>
                     <summary>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus enim nulla, tempor sed fermentum id, venenatis ac metus. In eu tortor et ligula placerat semper ut sed orci. 
                     </summary>
                     <footer>
-                        <a href="/past-projects">View all &gt;</a>
+                        <a href="/project-studies">View all &gt;</a>
                     </footer>                                    
                 </article>
         	</li>
