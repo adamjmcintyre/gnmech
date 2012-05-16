@@ -118,7 +118,7 @@ function write_body_tag(){
     endif;
     ?>
     <!--[if lt IE 8 ]>    <body class="<?php echo $className ?> oldIE"> <![endif]--> 
-    <!--[if !IE]><!--> <body class="<?php echo $className ?>"> <!--<![endif]-->
+    <!--[if gte IE 8 ]><!--> <body class="<?php echo $className ?>"> <!--<![endif]-->
     <?php
 
 }
