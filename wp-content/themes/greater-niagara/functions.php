@@ -79,6 +79,24 @@ function add_news(){
     register_post_type( 'news' , $args );   
 }
 
+add_action('init', 'add_community');
+function add_community(){
+    $args = array(
+        'label' => __('Community Programs'),
+        'singular_label' => __('Community Program'),
+        'public' => true,
+        'show_ui' => true,
+        'capability_type' => 'post',
+        'hierarchical' => false,
+        'supports' => array( 'title', 'thumbnail', 'editor' ),
+        'exclude_from_search' => true,
+        '_builtin' => false,
+        'rewrite' => array("slug" => "community-programs")
+        );
+
+    register_post_type( 'community' , $args );   
+}
+
 /*add_action("manage_posts_custom_column","custom_case_study_data_columns");
 add_action("manage_edit-case_study_columns","custom_case_study_columns");
 function custom_case_study_columns($columns){
@@ -213,6 +231,28 @@ while ( $loop->have_posts() ) : $loop->the_post();
         <?php the_post_thumbnail(); ?>
 
         <section class="bio note">
+            <?php the_content(); ?>
+        </section>
+    </article>
+<?php endwhile;
+}
+
+function write_community() {
+
+$loop = new WP_Query( array( 'post_type' => 'community', 'posts_per_page' => 30, 'orderby' => 'title', 'order' => 'asc', 'post__not_in' => array($excludeID) ) ); 
+while ( $loop->have_posts() ) : $loop->the_post(); 
+?>  
+    <article class="community-program">
+        <h1 class="fn">
+            <a href="<?php the_permalink(); ?>">
+                <?php the_title(); ?>
+            </a>
+        </h1>
+        
+
+        <?php the_post_thumbnail(); ?>
+
+        <section>
             <?php the_content(); ?>
         </section>
     </article>
